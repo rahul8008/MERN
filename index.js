@@ -10,7 +10,7 @@ const path =require('path');
 
 const app=express()
 
-const PORT= 8085;
+const PORT= process.env.PORT || 8085;
 
 dotenv.config();
 app.use(cors())
@@ -34,6 +34,6 @@ app.listen(PORT,()=>{
 
 });
 
-app.use('/hai',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("<h1>welcome to socialmedia ");
 })
